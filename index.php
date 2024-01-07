@@ -36,5 +36,8 @@ $escuderia1->mostrarDatosMecanicos();
 $escuderia1->agregarMecanicos(new Mecanico("Juan", "Gómez", 45, 3, true));
 $escuderia1->agregarMecanicos(new Mecanico("Pedro", "Giraldez", 33, 5, false));
 $escuderia1->mostrarDatosMecanicos();
-
+echo PHP_EOL;
+echo $piloto1->calcularSueldo();
+echo PHP_EOL;
+echo $mecanico1->calcularSueldo();
 ?>

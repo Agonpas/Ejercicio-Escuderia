@@ -1,6 +1,8 @@
 <?php
 include_once 'Trabajador.php';
 class Piloto extends Trabajador {
+    const SUELDO_BASE = 50000;
+    const PELIGROSIDAD = 50000;
     private int $altura;
     private int $peso;
 
@@ -19,6 +21,10 @@ class Piloto extends Trabajador {
     public function getPeso(): int {
         return $this->peso;
     }
-    
+    public function calcularSueldo() {
+        $sueldoPilotos = self :: SUELDO_BASE + self :: PELIGROSIDAD + ($this->antiguedad * 10000);
+        return "El sueldo anual de este piloto es de {$sueldoPilotos} euros.";
+    }
+
 }
 ?>

@@ -1,5 +1,6 @@
 <?php
 abstract class Trabajador {
+    const SUELDO_BASE = 50000;
     protected string $nombre;
     protected string $apellido;
     protected int $edad;
@@ -27,5 +28,6 @@ abstract class Trabajador {
     public function getAntiguedad(): int {
         return $this->antiguedad;
     }
+    abstract public function calcularSueldo();
 }
 ?>

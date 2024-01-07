@@ -31,6 +31,10 @@ $escuderia1->mostrarDatosPilotos();
 echo PHP_EOL;
 $mecanico1 = new Mecanico("Juan", "Gómez", 45, 3, true);
 echo $mecanico1;
-
+echo PHP_EOL;
+$escuderia1->mostrarDatosMecanicos();
+$escuderia1->agregarMecanicos(new Mecanico("Juan", "Gómez", 45, 3, true));
+$escuderia1->agregarMecanicos(new Mecanico("Pedro", "Giraldez", 33, 5, false));
+$escuderia1->mostrarDatosMecanicos();
 
 ?>

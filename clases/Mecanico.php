@@ -8,8 +8,10 @@ class Mecanico extends Trabajador {
         $this->estudios = $estudios;
     }
     public function __toString() {
-        return parent::__toString() . PHP_EOL . "El trabajador es un mecánico y " . ($this->estudios ? "tiene estudios de mecánica." : "no tiene estudios de mecánica.");
-        
+        return parent::__toString() . PHP_EOL . "El trabajador es un mecánico y " . ($this->estudios ? "tiene estudios de mecánica." : "no tiene estudios de mecánica.");   
+    }
+    public function getEstudios(){
+        return ($this->estudios ? "El mecánico dispone de estudios de mecánica" : "El mecánico no dispone de estudios en mecánica");
     }
 }
 ?>

@@ -1,10 +1,12 @@
 <?php
 include_once 'Coche.php';
+
 class Escuderia {
     private string $nombre;
     private int $presupuesto;
     private string $pais;
     private array $coches = array ();
+    private array $pilotos = array ();
 
     public function __construct (string $nombre, int $presupuesto, string $pais) {
         $this->nombre = $nombre;
@@ -20,14 +22,27 @@ class Escuderia {
     public function agregarCoches(Coche $coche) {
         $this->coches[] = $coche;
     }
-    public function mostrarDatos() {
-        $contador = 0;
+    public function agregarPilotos(Piloto $piloto) {
+        $this->pilotos[] = $piloto;
+    }
+    public function mostrarDatosCoches() {
         if (empty($this->coches)) {
             echo "La escuderia $this->nombre no dispone de ningún coche" . PHP_EOL;
         } else {
-            foreach ($this->coches as $coche) {
-                $contador++;
-                echo "La escuderia {$this->nombre} dispone de los siguientes coches" . PHP_EOL . "El coche {$contador} con una poténcia de {$coche->getPotencia()} CV"; // que alcanza una velocidad máxima de {$coche->getVelocidadMax()} ";
+            echo "La escuderia {$this->nombre} dispone de los siguientes coches" . PHP_EOL; 
+            foreach ($this->coches as $indice => $coche) {
+                echo " + El coche " . $indice + 1 . ": " . PHP_EOL . "- Poténcia de {$coche->getPotencia()} CV." . PHP_EOL . "- Velocidad máxima de {$coche->getVelocidadMax()} km/h." . PHP_EOL . "- El color del coche es de {$coche->getColor()}" . PHP_EOL . "- El precio del vehiculo es de {$coche->getPrecio()} euros." . PHP_EOL; 
+            }
+        }
+    }
+
+    public function mostrarDatosPilotos() {
+        if (empty($this->pilotos)) {
+            echo "La escuderia $this->nombre no dispone de ningún piloto" . PHP_EOL;
+        } else {
+            echo "La escuderia {$this->nombre} dispone de los siguientes pilotos" . PHP_EOL;
+            foreach ($this->pilotos as $indice => $piloto) {
+                echo " + El piloto " . $indice + 1 . ": " . PHP_EOL . "- Nombre: {$piloto->getNombre()}." . PHP_EOL . "- Apellido: {$piloto->getApellido()}." . PHP_EOL . "- Tiene una edad {$piloto->getEdad()} años" . PHP_EOL . "- Lleva en la escudería {$piloto->getAntiguedad()} años." . PHP_EOL . "- La altura es de {$piloto->getAltura()} cm." . PHP_EOL . "- El peso es de {$piloto->getPeso()} kg.". PHP_EOL; 
             }
         }
     }

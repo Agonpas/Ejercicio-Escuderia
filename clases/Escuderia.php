@@ -9,6 +9,7 @@ class Escuderia {
     private string $pais;
     private array $coches = array ();
     private array $pilotos = array ();
+    private array $mecanicos = array ();
 
     public function __construct (string $nombre, int $presupuesto, string $pais) {
         $this->nombre = $nombre;

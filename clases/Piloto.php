@@ -1,7 +1,7 @@
 <?php
 include_once 'Trabajador.php';
 class Piloto extends Trabajador {
-    const SUELDO_BASE = 50000;
+    
     const PELIGROSIDAD = 50000;
     private int $altura;
     private int $peso;

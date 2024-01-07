@@ -1,7 +1,7 @@
 <?php
 include_once 'Trabajador.php';
 class Mecanico extends Trabajador {
-    const SUELDO_BASE = 50000;
+    
     private bool $estudios;
    
     public function __construct(string $nombre, string $apellido, int $edad, int $antiguedad, bool $estudios) {
